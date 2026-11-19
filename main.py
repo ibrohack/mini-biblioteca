@@ -2,6 +2,7 @@
 from libros import anadir_libro, listar_libros
 from busqueda import buscar_libro
 from datos import guardar_libros, cargar_libros
+from estadisticas import mostrar_estadisticas
 
 
 def mostrar_menu():
@@ -11,6 +12,7 @@ def mostrar_menu():
     print("2. Listar libros")
     print("3. Buscar libro")
     print("4. Guardar libros")
+    print("5. Estadísticas")
     print("0. Salir")
 
 
@@ -31,6 +33,8 @@ def main():
             buscar_libro(biblioteca)
         elif opcion == "4":
             guardar_libros(biblioteca)
+        elif opcion == "5":
+            mostrar_estadisticas(biblioteca)
         else:
             print("Opción no válida")
 
