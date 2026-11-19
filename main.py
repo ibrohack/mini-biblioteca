@@ -1,6 +1,7 @@
 # --- Aquí cada persona añade el import de su módulo ---
 from libros import anadir_libro, listar_libros
 from busqueda import buscar_libro
+from datos import guardar_libros, cargar_libros
 
 
 def mostrar_menu():
@@ -9,11 +10,12 @@ def mostrar_menu():
     print("1. Añadir libro")
     print("2. Listar libros")
     print("3. Buscar libro")
+    print("4. Guardar libros")
     print("0. Salir")
 
 
 def main():
-    biblioteca = []
+    biblioteca = cargar_libros()
     while True:
         mostrar_menu()
         opcion = input("Elige una opción: ")
@@ -27,6 +29,8 @@ def main():
             listar_libros(biblioteca)
         elif opcion == "3":
             buscar_libro(biblioteca)
+        elif opcion == "4":
+            guardar_libros(biblioteca)
         else:
             print("Opción no válida")
 
