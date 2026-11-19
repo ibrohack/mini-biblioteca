@@ -19,6 +19,19 @@ def listar_libros(biblioteca):
         print(f"{i}. {libro['titulo']} - {libro['autor']} ({libro['anio']})")
 
 
+def borrar_libro(biblioteca):
+    """Muestra los libros, pide el número de uno y lo elimina de la biblioteca."""
+    listar_libros(biblioteca)
+    if not biblioteca:
+        return
+    numero = input("Número del libro a borrar: ").strip()
+    if not numero.isdigit() or not 1 <= int(numero) <= len(biblioteca):
+        print("Número no válido.")
+        return
+    libro = biblioteca.pop(int(numero) - 1)
+    print(f"Libro «{libro['titulo']}» borrado.")
+
+
 def ordenar_por_anio(biblioteca):
     """Ordena la biblioteca por año (de más antiguo a más reciente) y la muestra.
     Los libros sin un año numérico quedan al final."""
