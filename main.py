@@ -1,9 +1,11 @@
 # --- Aquí cada persona añade el import de su módulo ---
+from busqueda import buscar_libro
 
 
 def mostrar_menu():
     print("\n=== MINI BIBLIOTECA ===")
     # --- Aquí cada persona añade su opción del menú ---
+    print("3. Buscar libro")
     print("0. Salir")
 
 
@@ -16,6 +18,8 @@ def main():
             print("¡Hasta pronto!")
             break
         # --- Aquí cada persona añade su elif ---
+        elif opcion == "3":
+            buscar_libro(biblioteca)
         else:
             print("Opción no válida")
 
