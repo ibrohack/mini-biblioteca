@@ -17,3 +17,16 @@ def listar_libros(biblioteca):
         return
     for i, libro in enumerate(biblioteca, start=1):
         print(f"{i}. {libro['titulo']} - {libro['autor']} ({libro['anio']})")
+
+
+def borrar_libro(biblioteca):
+    """Muestra los libros, pide el número de uno y lo elimina de la biblioteca."""
+    listar_libros(biblioteca)
+    if not biblioteca:
+        return
+    numero = input("Número del libro a borrar: ").strip()
+    if not numero.isdigit() or not 1 <= int(numero) <= len(biblioteca):
+        print("Número no válido.")
+        return
+    libro = biblioteca.pop(int(numero) - 1)
+    print(f"Libro «{libro['titulo']}» borrado.")
