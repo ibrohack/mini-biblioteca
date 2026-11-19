@@ -8,6 +8,7 @@ Programa de consola para gestionar una pequeña biblioteca de libros.
 
 ## Participantes
 
+- **Aritz Navarro** (@Aritzz31): libros (`libros.py`, añadir y listar) y búsqueda (`busqueda.py`).
 - **Ivan Vivanco** (@ivanvive7): coordinación (repositorio, `.gitignore`, README y esqueleto de `main.py`) y datos (`datos.py`, guardar y cargar).
 
 ## Estructura del proyecto
