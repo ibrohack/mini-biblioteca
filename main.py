@@ -1,5 +1,5 @@
 # --- Aquí cada persona añade el import de su módulo ---
-from libros import anadir_libro, listar_libros, borrar_libro
+from libros import anadir_libro, listar_libros, borrar_libro, ordenar_por_anio
 from busqueda import buscar_libro
 from datos import guardar_libros, cargar_libros
 from estadisticas import mostrar_estadisticas
@@ -14,6 +14,7 @@ def mostrar_menu():
     print("4. Guardar libros")
     print("5. Estadísticas")
     print("6. Borrar libro")
+    print("7. Ordenar libros por año")
     print("0. Salir")
 
 
@@ -38,6 +39,8 @@ def main():
             mostrar_estadisticas(biblioteca)
         elif opcion == "6":
             borrar_libro(biblioteca)
+        elif opcion == "7":
+            ordenar_por_anio(biblioteca)
         else:
             print("Opción no válida")
 

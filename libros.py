@@ -30,3 +30,14 @@ def borrar_libro(biblioteca):
         return
     libro = biblioteca.pop(int(numero) - 1)
     print(f"Libro «{libro['titulo']}» borrado.")
+
+
+def ordenar_por_anio(biblioteca):
+    """Ordena la biblioteca por año (de más antiguo a más reciente) y la muestra.
+    Los libros sin un año numérico quedan al final."""
+    biblioteca.sort(
+        key=lambda libro: (not libro["anio"].isdigit(),
+                           int(libro["anio"]) if libro["anio"].isdigit() else 0)
+    )
+    print("Libros ordenados por año:")
+    listar_libros(biblioteca)
